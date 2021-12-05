@@ -1,6 +1,8 @@
 import React from 'react'; //Not needed since react 17+
 import ReactDOM from 'react-dom';
 
+import './index.css';
+
 /**
  * Component Rules
  */
@@ -17,8 +19,39 @@ import ReactDOM from 'react-dom';
 // element
 // 2) props should use camle case instead of
 // kebab-case
-const Greeting = () => {
-  return <h1>Hello World!</h1>;
+const BookList = () => {
+  return (
+    <section className="booklist">
+      <Book />
+      <Book />
+    </section>
+  );
 };
 
-ReactDOM.render(<Greeting />, document.querySelector('#root'));
+const Book = () => {
+  return (
+    <article className="book">
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
+
+const Image = () => {
+  return (
+    <img
+      src="https://images-eu.ssl-images-amazon.com/images/I/517h-u1AQlL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
+      alt=""
+    />
+  );
+};
+
+const Title = () => {
+  return <h1>I Love You To the Moon and Back</h1>;
+};
+
+const Author = () => {
+  return <h4>Amelia Hepworth</h4>;
+};
+ReactDOM.render(<BookList />, document.querySelector('#root'));
