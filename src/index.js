@@ -24,6 +24,7 @@ const BookList = () => {
     <section className="booklist">
       <Book />
       <Book />
+      <Book />
     </section>
   );
 };
@@ -52,6 +53,10 @@ const Title = () => {
 };
 
 const Author = () => {
-  return <h4>Amelia Hepworth</h4>;
+  return (
+    <h4 style={{ color: '#617d98', fontSize: '.75rem', marginTop: '.25rem' }}>
+      Amelia Hepworth
+    </h4>
+  );
 };
 ReactDOM.render(<BookList />, document.querySelector('#root'));
