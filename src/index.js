@@ -22,20 +22,19 @@ import './index.css';
 const BookList = () => {
   return (
     <section className="booklist">
-      <Book />
+      <Book
+        src="https://images-eu.ssl-images-amazon.com/images/I/517h-u1AQlL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
+        title="I Love You To the Moon and Back"
+        author="Amelia Hepworth"
+      />
     </section>
   );
 };
 
-const Book = () => {
-  const title = 'I Love You To the Moon and Back';
-  const author = 'Amelia Hepworth';
+const Book = ({ src, title, author }) => {
   return (
     <article className="book">
-      <img
-        src="https://images-eu.ssl-images-amazon.com/images/I/517h-u1AQlL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
-        alt=""
-      />
+      <img src={src} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
     </article>
