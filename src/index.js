@@ -26,17 +26,26 @@ const BookList = () => {
         src="https://images-eu.ssl-images-amazon.com/images/I/517h-u1AQlL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
         title="I Love You To the Moon and Back"
         author="Amelia Hepworth"
+      >
+        Some description here
+      </Book>
+
+      <Book
+        src="https://images-eu.ssl-images-amazon.com/images/I/517h-u1AQlL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
+        title="I Love You To the Moon and Back"
+        author="Amelia Hepworth"
       />
     </section>
   );
 };
 
-const Book = ({ src, title, author }) => {
+const Book = ({ src, title, author, children }) => {
   return (
     <article className="book">
       <img src={src} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
+      {children}
     </article>
   );
 };
