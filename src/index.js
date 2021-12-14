@@ -42,11 +42,17 @@ const BookList = () => {
 };
 
 const Book = ({ src, title, author }) => {
+  const clickHandler = () => {
+    alert('hello world!');
+  };
   return (
     <article className="book">
       <img src={src} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
+      <button type="button" onClick={clickHandler}>
+        Hello Me
+      </button>
     </article>
   );
 };
