@@ -19,33 +19,32 @@ import './index.css';
 // element
 // 2) props should use camle case instead of
 // kebab-case
-const BookList = () => {
-  return (
-    <section className="booklist">
-      <Book
-        src="https://images-eu.ssl-images-amazon.com/images/I/517h-u1AQlL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
-        title="I Love You To the Moon and Back"
-        author="Amelia Hepworth"
-      >
-        Some description here
-      </Book>
+const books = [
+  {
+    src: 'https://images-eu.ssl-images-amazon.com/images/I/517h-u1AQlL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg',
+    title: 'I Love You To the Moon and Back',
+    author: 'Amelia Hepworth',
+  },
+  {
+    src: 'https://images-eu.ssl-images-amazon.com/images/I/517h-u1AQlL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg',
+    title: 'I Love You To the Moon and Back v2',
+    author: 'Amelia Hepworth',
+  },
+];
 
-      <Book
-        src="https://images-eu.ssl-images-amazon.com/images/I/517h-u1AQlL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
-        title="I Love You To the Moon and Back"
-        author="Amelia Hepworth"
-      />
-    </section>
-  );
+const BookList = () => {
+  const booklist = books.map(({ src, title, author }) => (
+    <Book key={title} src={src} title={title} author={author} />
+  ));
+  return <section className="booklist">{booklist}</section>;
 };
 
-const Book = ({ src, title, author, children }) => {
+const Book = ({ src, title, author }) => {
   return (
     <article className="book">
       <img src={src} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
-      {children}
     </article>
   );
 };
